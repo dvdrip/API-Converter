@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatasetConverterAPI", "DatasetConverterAPI\DatasetConverterAPI.csproj", "{B4BC2E84-1963-4922-9EDF-ED67A834CA97}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatasetConverterAPI", "DatasetConverterAPI\DatasetConverterAPI.csproj", "{B4BC2E84-1963-4922-9EDF-ED67A834CA97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatasetConverterAPI.Tests", "DatasetConverterAPI.Tests\DatasetConverterAPI.Tests.csproj", "{3FE42D50-6C34-4EEA-95F3-4093E8C3FCDB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{B4BC2E84-1963-4922-9EDF-ED67A834CA97}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B4BC2E84-1963-4922-9EDF-ED67A834CA97}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B4BC2E84-1963-4922-9EDF-ED67A834CA97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FE42D50-6C34-4EEA-95F3-4093E8C3FCDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FE42D50-6C34-4EEA-95F3-4093E8C3FCDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FE42D50-6C34-4EEA-95F3-4093E8C3FCDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FE42D50-6C34-4EEA-95F3-4093E8C3FCDB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
