@@ -6,7 +6,7 @@ namespace DatasetConverterAPI.Services
 {
     public class ReportService : IReportService
     {
-        public async Task<ReportViewModel> RenderReportAsync(Dataset dataset, Template template)
+        public async Task<string> RenderReportAsync(Dataset dataset, Template template)
         {
             var result = new StringBuilder();
 
@@ -22,21 +22,19 @@ namespace DatasetConverterAPI.Services
                 result.AppendLine($"<field-DomesticGross>{movie.DomesticGross}</field-DomesticGross>");
                 result.AppendLine($"<field-WorldwideGross>{movie.WorldwideGross}</field-WorldwideGross>");
 
-                result.AppendLine(template.TemplateTitle);
                 result.AppendLine(template.RowEnd);
             }
 
             string generatedReport = result.ToString();
 
-            // Construct the ReportViewModel
-            var reportViewModel = new ReportViewModel
-            {
-                Dataset = dataset,
-                Template = template,
-                Report = generatedReport
-            };
+            //var reportViewModel = new ReportViewModel
+            //{
+            //    Dataset = dataset,
+            //    Template = template,
+            //    Report = generatedReport
+            //};
 
-            return await Task.FromResult(reportViewModel);
+            return await Task.FromResult(generatedReport);
         }
     }
 }
