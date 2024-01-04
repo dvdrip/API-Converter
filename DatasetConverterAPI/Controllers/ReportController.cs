@@ -19,16 +19,18 @@ namespace DatasetConverterAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> RenderReport([FromForm] Dataset datasetFile, [FromForm] Template templateFile)
+        public async Task<IActionResult> RenderReport([FromBody] ReportViewModel report)
         {
+            if (report == null)
+            {
+                return BadRequest("Check if report format is valid.");
+            }
+
             try
             {
-                var dataset = datasetFile;
-                var templateResult = JsonConvert.DeserializeObject<Template>(templateFile.TemplateTitle);
+                var formattedReport = await _reportService.RenderReportAsync(report.Movies, report.Template);
 
-                var report = await _reportService.RenderReportAsync(dataset, templateResult);
-
-                return Ok(report);
+                return Ok(formattedReport);
             }
             catch (Exception ex)
             {

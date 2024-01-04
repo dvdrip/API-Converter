@@ -4,6 +4,6 @@ namespace DatasetConverterAPI.Services
 {
     public interface IReportService
     {
-        Task<string> RenderReportAsync(Dataset dataset, Template template);
+        Task<string> RenderReportAsync(List<Movie> movies, Template template);
     }
 }

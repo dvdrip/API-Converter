@@ -6,11 +6,13 @@ namespace DatasetConverterAPI.Services
 {
     public class ReportService : IReportService
     {
-        public async Task<string> RenderReportAsync(Dataset dataset, Template template)
+        public async Task<string> RenderReportAsync(List<Movie> movies, Template template)
         {
             var result = new StringBuilder();
 
-            foreach (var movie in dataset.Rows)
+            result.AppendLine(template.TemplateTitle);
+
+            foreach (var movie in movies)
             {
                 result.AppendLine(template.RowStart);
 
