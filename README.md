@@ -8,7 +8,7 @@
 ### Instructions to test the API via debugging
 1. Navigate to Swagger UI using default port `3005`
 2. The default url should be `https://localhost:3005/swagger`
-3. The Report controller endpoint should be available for with values easily modified for testing.
+3. A Report controller endpoint should be available with a JSON structure for testing.
 
 ### Instructions to test using the included NUnit test project
-1. The shortcut keys `CTRL + R, A` should run the included test project using sample values
+2. Run the included test project using the shortcut keys `CTRL + R, A`
