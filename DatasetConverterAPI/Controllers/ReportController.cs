@@ -1,4 +1,5 @@
 ﻿using DatasetConverterAPI.Models;
+using DatasetConverterAPI.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -10,29 +11,29 @@ namespace DatasetConverterAPI.Controllers
     [ApiController]
     public class ReportController : ControllerBase
     {
+        private readonly IReportService _reportService;
+
+        public ReportController(IReportService reportService)
+        {
+            _reportService = reportService;
+        }
 
         [HttpPost]
-        public async Task<IActionResult> RenderReport([FromForm] IFormFile datasetFile, [FromForm] IFormFile templateFile)
+        public async Task<IActionResult> RenderReport([FromForm] Dataset datasetFile, [FromForm] Template templateFile)
         {
-            string datasetJson;
-            string template;
-
-            using (var datasetReader = new StreamReader(datasetFile.OpenReadStream()))
+            try
             {
-                datasetJson = await datasetReader.ReadToEndAsync();
-            }
+                var dataset = datasetFile;
+                var templateResult = JsonConvert.DeserializeObject<Template>(templateFile.TemplateTitle);
 
-            using (var templateReader = new StreamReader(templateFile.OpenReadStream()))
+                var report = await _reportService.RenderReportAsync(dataset, templateResult);
+
+                return Ok(report);
+            }
+            catch (Exception ex)
             {
-                template = await templateReader.ReadToEndAsync();
+                return StatusCode(500, $"Report render error: {ex.Message}");
             }
-
-            //var datasetResult = await JsonConvert.DeserializeObject<Movie>(datasetJson);
-
-            var dataset = JsonConvert.DeserializeObject<Dataset>(datasetJson);
-            var templateModel = JsonConvert.DeserializeObject<Template>(template);
-
-            return Ok();
         }
     }
 }
