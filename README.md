@@ -5,6 +5,7 @@
 2. Open Visual Studio and clone the repository using the link to create a local solution.
 3. Build and run the solution using the shortcut key **F5**.
    - If you are on a machine with docker engine running, make sure to uncomment the `Docker` section inside `launchSettings.json` before running the project.
+   - This will switch the default ports from `3005` or `3006`, to `8081` or `8080`
    - In *Solution Explorer*, click the *Show All Files* icon and navigate to the root of the project and include the **Dockerfile**
 
 ### Instructions to test the API via debugging
