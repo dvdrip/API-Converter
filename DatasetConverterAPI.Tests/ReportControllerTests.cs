@@ -17,7 +17,7 @@ namespace DatasetConverterAPI.Tests
                 Genre = "Action",
                 TrailerURL = "https://movies.com/movie1-trailer",
                 Rating = 1,
-                ReleaseDate = DateTime.Now.AddDays(-10),
+                ReleaseDate = DateTime.Now.AddDays(-1000),
                 DomesticGross = 999,
                 WorldwideGross = 999.99M
             };
@@ -28,7 +28,7 @@ namespace DatasetConverterAPI.Tests
                 Genre = "Horror",
                 TrailerURL = "https://movies.com/movie2-trailer",
                 Rating = 2,
-                ReleaseDate = DateTime.Now.AddDays(-1),
+                ReleaseDate = DateTime.Now.AddDays(-100),
                 DomesticGross = 1234,
                 WorldwideGross = 12345678
             };
@@ -39,7 +39,7 @@ namespace DatasetConverterAPI.Tests
                 Genre = "Comedy",
                 TrailerURL = "https://movies.com/movie3-trailer",
                 Rating = 3,
-                ReleaseDate = DateTime.Now.AddDays(-4),
+                ReleaseDate = DateTime.Now.AddDays(-400),
                 DomesticGross = 98767435,
                 WorldwideGross = 7546
             };

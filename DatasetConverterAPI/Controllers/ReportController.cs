@@ -21,7 +21,7 @@ namespace DatasetConverterAPI.Controllers
         [HttpPost]
         public async Task<IActionResult> RenderReport([FromBody] ReportViewModel report)
         {
-            if (report == null)
+            if (report == null || report.Movies.Count > 10000000)
             {
                 return BadRequest("Check if report format is valid.");
             }
