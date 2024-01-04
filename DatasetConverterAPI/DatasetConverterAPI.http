@@ -1,4 +1,4 @@
-@DatasetConverterAPI_HostAddress = http://localhost:5134
+@DatasetConverterAPI_HostAddress = http://localhost:3005
 
 GET {{DatasetConverterAPI_HostAddress}}/weatherforecast/
 Accept: application/json
