@@ -29,13 +29,6 @@ namespace DatasetConverterAPI.Services
 
             string generatedReport = result.ToString();
 
-            //var reportViewModel = new ReportViewModel
-            //{
-            //    Dataset = dataset,
-            //    Template = template,
-            //    Report = generatedReport
-            //};
-
             return await Task.FromResult(generatedReport);
         }
     }
